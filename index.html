@@ -8,7 +8,10 @@
   <body>
     <div class="container">
       <header>
-        <h1>Dulce Sabor</h1>
+        <div class="logo-container">
+          <img src="img/logo.png" alt="Logo Dulce Sabor" class="logo" />
+          <h1>Dulce Sabor</h1>
+        </div>
         <nav>
           <a href="index.html">Inicio</a>
           <a href="tienda.html">Tienda</a>
@@ -17,9 +20,33 @@
       </header>
 
       <main>
-        <section>
+        
+        <section class="bienvenida">
           <h2>Bienvenidos a Dulce Sabor</h2>
-          <p>Descubre los mejores pasteles artesanales de la ciudad.</p>
+          <p>Descubre los mejores pasteles artesanales de la ciudad, hechos con mucho amor y dedicación.</p>
+          <a href="tienda.html" class="btn-tienda">Explorar nuestra tienda</a>
+        </section>
+
+        
+        <section class="destacados">
+          <h3>Productos Destacados</h3>
+          <div class="destacados-grid">
+            <div class="producto-card">
+              <img src="img/pastel1.jpg" alt="Pastel de Chocolate" />
+              <h4>Pastel de Chocolate</h4>
+              <p>$15.00</p>
+            </div>
+            <div class="producto-card">
+              <img src="img/pastel2.jpg" alt="Pastel de Fresa" />
+              <h4>Pastel de Fresa</h4>
+              <p>$12.00</p>
+            </div>
+            <div class="producto-card">
+              <img src="img/pastel3.jpg" alt="Pastel Red Velvet" />
+              <h4>Red Velvet</h4>
+              <p>$18.00</p>
+            </div>
+          </div>
         </section>
       </main>
 
