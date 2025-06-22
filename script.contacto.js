@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("formulario-contacto");
- form.addEventListener("submit", function (e) {
+  form.addEventListener("submit", function (e) {
     e.preventDefault();
 
     const nombre = document.getElementById("nombre").value;
@@ -35,9 +35,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.body.appendChild(modal);
 
-    document.getElementById("cerrar-modal").addEventListener("click", function () {
-      modal.remove();
-      form.reset();
-    });
+    document
+      .getElementById("cerrar-modal")
+      .addEventListener("click", function () {
+        modal.remove();
+        form.reset();
+        setTimeout(() => {
+          document.getElementById("nombre").focus();
+        }, 0);
+      });
   });
 });
