@@ -25,31 +25,37 @@
             <img src="img/chocolate.jpg" alt="Pastel de Chocolate" />
             <h3>Pastel de Chocolate</h3>
             <p>$15.00</p>
+            <button class="btn-comprar" data-nombre="Pastel de Chocolate" data-precio="15">Agregar</button>
           </div>
           <div class="producto">
             <img src="img/fresa.jpg" alt="Pastel de Fresa" />
             <h3>Pastel de Fresa</h3>
             <p>$12.00</p>
+            <button class="btn-comprar" data-nombre="Pastel de Fresa" data-precio="12">Agregar</button>
           </div>
           <div class="producto">
             <img src="img/vainilla.jpg" alt="Pastel de Vainilla" />
             <h3>Pastel de Vainilla</h3>
             <p>$10.00</p>
+            <button class="btn-comprar" data-nombre="Pastel de Vainilla" data-precio="10">Agregar</button>
           </div>
           <div class="producto">
             <img src="img/red.jpg" alt="Pastel Red Velvet" />
             <h3>Red Velvet</h3>
             <p>$18.00</p>
+            <button class="btn-comprar" data-nombre="Pastel Red Velvet" data-precio="18">Agregar</button>
           </div>
           <div class="producto">
             <img src="img/limon.jpg" alt="Pastel de Limón" />
             <h3>Pastel de Limón</h3>
             <p>$14.00</p>
+            <button class="btn-comprar" data-nombre="Pastel de Limón" data-precio="14">Agregar</button>
           </div>
           <div class="producto">
             <img src="img/cafe.jpg" alt="Pastel de Café" />
             <h3>Pastel de Café</h3>
             <p>$16.00</p>
+            <button class="btn-comprar" data-nombre="Pastel de Café" data-precio="16">Agregar</button>
           </div>
         </section>
       </main>
@@ -58,5 +64,16 @@
         <p>Visítanos y endulza tu día 🍰 © 2025 Dulce Sabor</p>
       </footer>
     </div>
+
+    <div id="facturacion" style="position: fixed; top: 0; right: 0; width: 300px; height: 100%; background: #fff; border-left: 2px solid #ccc; padding: 20px; overflow-y: auto; display: none;">
+  <h3>Factura</h3>
+  <ul id="lista-factura"></ul>
+  <hr />
+  <p><strong>Subtotal:</strong> $<span id="subtotal">0.00</span></p>
+  <p><strong>IVA (15%):</strong> $<span id="iva">0.00</span></p>
+  <p><strong>Total:</strong> $<span id="total">0.00</span></p>
+</div>
+
+<script src="facturaciontienda.js"></script>
   </body>
 </html>
