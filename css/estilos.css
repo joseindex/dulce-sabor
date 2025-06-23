@@ -191,9 +191,157 @@ form button:hover {
     transform: scale(1.05);
 }
 
+/* Estilo para ítems en la lista de la factura */
+#lista-factura li {
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95rem;
+    color: #333;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+/* Botones +1 / -1 dentro de cada ítem */
+#lista-factura button.btn-mas,
+#lista-factura button.btn-menos {
+    padding: 4px 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    margin-left: 6px;
+    transition: background-color 0.3s ease;
+}
+
+#lista-factura button.btn-mas {
+    background-color: #0d6efd;
+    color: white;
+}
+
+#lista-factura button.btn-menos {
+    background-color: #dc3545;
+    color: white;
+}
+
+#lista-factura button.btn-mas:hover {
+    background-color: #084298;
+}
+
+#lista-factura button.btn-menos:hover {
+    background-color: #b02a37;
+}
+
 
 
 /* Media Queries */
+/* Confirmar Compra */
+#btn-confirmar {
+    background: linear-gradient(135deg, #28a745, #218838);
+    color: white;
+    padding: 0.7em 1.4em;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-right: 10px;
+    box-shadow: 0 4px 12px rgba(0, 128, 0, 0.2);
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#btn-confirmar:hover {
+    background: linear-gradient(135deg, #218838, #1e7e34);
+    transform: scale(1.03);
+}
+
+/* Cancelar */
+#btn-cancelar {
+    background-color: #f8f9fa;
+    color: #6c757d;
+    padding: 0.7em 1.4em;
+    font-size: 1rem;
+    font-weight: 600;
+    border: 1px solid #ced4da;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#btn-cancelar:hover {
+    background-color: #e2e6ea;
+    transform: scale(1.03);
+}
+#modal-compra {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    padding: 2em;
+    max-width: 400px;
+    width: 90%;
+    z-index: 1000;
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+    animation: fadeIn 0.4s ease;
+}
+
+#modal-compra h2 {
+    font-size: 1.5rem;
+    color: #2e2e2e;
+    margin-bottom: 1em;
+}
+
+#modal-compra p {
+    margin: 0.5em 0;
+    font-size: 1rem;
+    color: #444;
+}
+
+#modal-compra p strong {
+    color: #000;
+}
+
+/* Botón de cerrar */
+#cerrar-modal {
+    background: linear-gradient(135deg, #007bff, #00bfff);
+    color: white;
+    padding: 0.6em 1.2em;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 1.5em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
+}
+
+#cerrar-modal:hover {
+    background: linear-gradient(135deg, #0062cc, #0088ff);
+    transform: scale(1.05);
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
 
 /* Para pantallas pequeñas (móviles) */
 @media (max-width: 600px) {
@@ -256,88 +404,76 @@ form button:hover {
 
 /* Estilos para la sección de productos en Tienda */
 .productos {
-    padding: 2em 0;
-    text-align: center;
+    padding: 2em 1em;
+    display: grid;
+    gap: 20px;
+    justify-content: center;
+    align-items: stretch;
 }
 
-.productos .producto {
-    background-color: #fff;
-    padding: 1em;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-    text-align: center;
-}
-
-.producto:hover {
-    transform: translateY(-10px); 
-}
-
-.producto img {
-    max-width: 100%;  
-    height: auto;     
-    border-radius: 5px;  
-}
-
-.producto h3 {
-    font-size: 1.2rem;
-    color: #4b2e2e;
-    margin: 1em 0 0.5em;
-}
-
-.producto p {
-    font-size: 1rem;
-    color: #d56d4a;
-    font-weight: bold;
-}
-
-@media (max-width: 600px) {
+/* Ajustes responsivos de grilla */
+@media (min-width: 768px) {
     .productos {
-        grid-template-columns: 1fr; 
-    }
-
-    .producto {
-        padding: 0.8em;
-    }
-
-    .producto h3 {
-        font-size: 1.1rem;
-    }
-
-    .producto p {
-        font-size: 0.9rem;
+        grid-template-columns: repeat(2, 1fr);
     }
 }
-
-
-@media (max-width: 768px) {
-    .productos {
-        grid-template-columns: repeat(2, 1fr); 
-    }
-
-    .producto {
-        padding: 0.8em;
-    }
-
-    .producto h3 {
-        font-size: 1.2rem;
-    }
-
-    .producto p {
-        font-size: 1rem;
-    }
-}
-
 
 @media (min-width: 1024px) {
     .productos {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr); 
-        gap: 20px;
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
+.productos .producto {
+    background-color: #ffffff;
+    padding: 1.5em;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
+.productos .producto:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
 
+.producto img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: 1em;
+}
 
+.producto h3 {
+    font-size: 1.3rem;
+    color: #333333;
+    margin-bottom: 0.5em;
+}
 
+.producto p {
+    font-size: 1.1rem;
+    color: #dc6a44;
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+
+/* Botón comprar */
+.btn-comprar {
+    background-color: #007bff;
+    color: white;
+    padding: 0.6em 1.2em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-comprar:hover {
+    background-color: #0056b3;
+}
